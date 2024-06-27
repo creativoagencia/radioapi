@@ -18,6 +18,8 @@ app.add_middleware(
 RADIO_STREAMS = {
     "fabian": "https://sonic-us.streaming-chile.com/8072/stream",
     "radioarmeria": "https://c19.radioboss.fm:8114/stream",
+    "foramontanos": "https://foramontanos.fm:8443/live",
+    "foramontanosODC": "https://foramontanos.fm:8443/ODC",
     # Adicione mais rádios aqui, no formato "nome_radio": "url_radio"
 }
 
