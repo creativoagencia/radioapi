@@ -16,10 +16,8 @@ app.add_middleware(
 )
 
 RADIO_STREAMS = {
-    "jailson": "https://stream.zeno.fm/yn65fsaurfhvv",
-    "inmortales": "https://ldeazevedo.com:8000/inmortales",
     "fabian": "https://sonic-us.streaming-chile.com/8072/stream",
-    "capital": "https://stm16.xcast.com.br:7208/stream",
+    "radioarmeria": "https://c19.radioboss.fm:8114/stream",
     # Adicione mais rádios aqui, no formato "nome_radio": "url_radio"
 }
 
