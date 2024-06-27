@@ -24,7 +24,7 @@ RADIO_STREAMS = {
     # Adicione mais rádios aqui, no formato "nome_radio": "url_radio"
 }
 
-SONG_HISTORY_LIMIT = 5
+SONG_HISTORY_LIMIT = 8
 
 radio_data = {}
 for radio_name in RADIO_STREAMS:
@@ -145,8 +145,8 @@ async def get_radio_info(background_tasks: BackgroundTasks, radio_url: Optional[
 
     if radio_name is None or radio_name not in RADIO_STREAMS:
         return {
-            "currentSong": "Free API Disabled",
-            "currentArtist": "Contact contato@jailson.es for free use."
+            "currentSong": "Api Desabilitada",
+            "currentArtist": "Contactame para su uso +51975959016"
         }
 
     background_tasks.add_task(monitor_radio, radio_name, background_tasks)
