@@ -1,62 +1,57 @@
-# Radioplayer metadatas's Now Playng API
+# Extractor de Metadatos
 
-🚀 with Deployment Boilerplate on Digital Ocean
+🚀 Con implementación estándar en Digital Ocean
 
-[![Deploy to DO](https://www.deploytodo.com/do-btn-blue.svg)](https://cloud.digitalocean.com/apps/new?repo=https://github.com/jailsonsb2/Radio-Now-Playing-API/tree/main)
+[![Deploy to DO](https://www.deploytodo.com/do-btn-blue.svg)](https://cloud.digitalocean.com/apps/new?repo=https://github.com/jailsonsb2/FastAPI-StreamTitle-Extractor/tree/main)
 
-Don't have an account? Get a $200 bonus to test it out!
+## Descripción general
 
-[![DigitalOcean Referral Badge](https://web-platforms.sfo2.cdn.digitaloceanspaces.com/WWW/Badge%203.svg)](https://www.digitalocean.com/?refcode=54a7273746ae&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge)
+FastAPI Stream Title Metadata Extractor es una aplicación sencilla que permite a los usuarios obtener el título de los metadatos de una transmisión de audio y extraer el artista y el nombre de la canción. Utiliza la biblioteca FastAPI para crear una API web que acepta la URL de una transmisión de audio MP3 como entrada y devuelve el nombre del artista y la canción en formato JSON.
 
-## Overview
+Este repositorio sirve como modelo mínimo para implementar una aplicación FastAPI en Digital Ocean. Está diseñado para proporcionar una forma sencilla de ejecutar su aplicación FastAPI con la menor cantidad de dolores de cabeza y bloatware.
 
-This a simple application that allows users to obtain the title from the metadata of an audio stream and extract the artist and song name from it. It uses the FastAPI library to create a web API that accepts the URL of an MP3 audio stream as input and returns the artist and song name in JSON format.
+## Características
 
-This repository serves as a minimal boilerplate for deploying a FastAPI application on Digital Ocean. It's designed to provide a straightforward way to get your FastAPI application running with the least amount of headache and bloatware.
+•⁠  ⁠Recuperación del título a partir de los metadatos de una transmisión de audio.
+•⁠  ⁠Extracción del artista y el nombre de la canción del título de la transmisión.
+•⁠  ⁠Configuración mínima de FastAPI
+•⁠  ⁠Listo para implementar en Digital Ocean
+•⁠  ⁠Configuraciones básicas para un inicio rápido
 
-## Features
+## Requiremientos
 
-- Retrieval of the title from the metadata of an audio stream
-- Extraction of the artist and song name from the stream title
-- Minimal FastAPI setup
-- Ready-to-deploy on Digital Ocean
-- Basic configurations for a quick start
+Antes de ejecutar la aplicación, asegúrese de tener instalado lo siguiente:
+•⁠  ⁠Python 3.x
+•⁠  ⁠FastAPI
+•⁠  ⁠Uvicorn
 
-## Requirements
+## Inicio Rápido
 
-Before running the application, make sure you have the following installed:
-- Python 3.x
-- FastAPI
-- Uvicorn
-
-## Quick Start
-
-1. Click the "Deploy to DO" button at the top.
-2. Follow the instructions on Digital Ocean to deploy your app.
-3. Enjoy your FastAPI app running in the cloud!
+1.⁠ ⁠Haga clic en el botón "Implementar para HACER" en la parte superior.
+2.⁠ ⁠Siga las instrucciones de Digital Ocean para implementar su aplicación.
+3.⁠ ⁠¡Disfruta de tu aplicación FastAPI ejecutándose en la nube!
 
 ---
 
-### Stream Title Fetcher
+### Recuperador de títulos de transmisión
 
-To retrieve the stream title and cover image, simply replace the URL parameter in the API link provided below:
+Para recuperar el título de la transmisión y la imagen de portada, simplemente reemplace el parámetro URL en el enlace API que se proporciona a continuación:
 
-**API Endpoint:** 
-`https://twj.es/get_stream_title/?url=`
+*API Endpoint:* 
+⁠ https://twj.es/get_stream_title/?url= ⁠
 
-**Example Usage:**
-Replace `https://stream.zeno.fm/yn65fsaurfhvv` with your desired stream URL:
-```
+*Ejemplo de Uso:*
+Replace ⁠ https://stream.zeno.fm/yn65fsaurfhvv ⁠ with your desired stream URL:
+
 https://twj.es/get_stream_title/?url=https://stream.zeno.fm/yn65fsaurfhvv
-```
 
-This will return a link to the stream’s cover image along with the title.
+
+Esto devolverá un enlace a la imagen de portada de la transmisión junto con el título.
 
 --- 
 
 ## Contribution
 
-Contributions are welcome! Feel free to open an issue or submit a pull request for suggestions, bug fixes, or new features.
+¡Las contribuciones son bienvenidas! No dudes en abrir un problema o enviar una solicitud de extracción para recibir sugerencias, correcciones de errores o nuevas funciones.
 
-Happy coding! 🎉
-
+¡Feliz codificación! 🎉
