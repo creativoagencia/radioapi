@@ -115,10 +115,10 @@ async def monitor_radio(radio_url: str, background_tasks: BackgroundTasks):
 @app.get("/")
 async def root():
     return {
-        "message": "Welcome",
+        "message": "Bienvenido",
         "now_playing and cover art": "Use /get_stream_title/?url=https://example.com/stream",
         "now_playing and history": "Use /radio_info/?radio_url=https://example.com/stream",
-        "contact": "contato@jailson.es"       
+        "contact": "+51975959016"       
     }
 
 # Endpoint para obter o título da transmissão e a capa do álbum
