@@ -131,13 +131,23 @@ async def get_stream_title(url: str, interval: Optional[int] = 19200):
 
 
 
-@app.get("/radio_info/{radio_name}")
-async def get_radio_info(radio_name: str, background_tasks: BackgroundTasks):
-    if radio_name not in RADIO_STREAMS:
-        return { 
-            "currentSong": "Free API Disabled",
-            "currentArtist": "Contact contato@jailson.es for free use."
-        } 
+@app.get("/radio_info/")
+async def get_radio_info(background_tasks: BackgroundTasks, radio_url: Optional[str] = Query(None)):
+    if radio_url:
+        radio_name = next((name for name, url in RADIO_STREAMS.items() if url == radio_url), None)
+        if radio_name is None:
+            return {
+                "currentSong": "Api Desabilitada",
+                "currentArtist": "Contactame para su uso +51975959016"
+            }
+    else:
+        radio_name = None  # Para indicar que no se proporcionó ningún nombre de radio
+
+    if radio_name is None or radio_name not in RADIO_STREAMS:
+        return {
+            "currentSong": "Api Desabilitada",
+            "currentArtist": "Contactame para su uso +51975959016"
+        }
 
     background_tasks.add_task(monitor_radio, radio_name, background_tasks)
     return {
