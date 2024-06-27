@@ -136,8 +136,8 @@ async def get_radio_info(background_tasks: BackgroundTasks, radio_url: Optional[
         radio_name = next((name for name, url in RADIO_STREAMS.items() if url == radio_url), None)
         if radio_name is None:
             return {
-                "currentSong": "Free API Disabled",
-                "currentArtist": "Contact contato@jailson.es for free use."
+                "currentSong": "Api Desabilitada",
+                "currentArtist": "Contactame para su uso +51975959016"
             }
     else:
         radio_name = None  # Para indicar que nenhum nome de rádio foi fornecido
