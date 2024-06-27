@@ -112,9 +112,9 @@ async def monitor_radio(radio_name: str, background_tasks: BackgroundTasks):
 @app.get("/")
 async def root():
     return {
-        "message": "Welcome",
+        "message": "Bienvenido",
         "now_playing": "Use /get_stream_title/?url=https://example.com/stream",
-        "contact": "contato@jailson.es",
+        "contact": "+51975959016",
         "free_use": "Contact us for free use of history."        
     }
 
