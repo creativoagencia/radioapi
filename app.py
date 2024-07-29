@@ -17,22 +17,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
- # DATA_DIR = "radio_data"
+ DATA_DIR = "radio_data"
 
-RADIO_STREAMS = {
-    "jailson": "https://stream.zeno.fm/yn65fsaurfhvv",
-    "inmortales": "https://ldeazevedo.com:8000/inmortales",
-    # Adicione mais rádios aqui, no formato "nome_radio": "url_radio"
-}
 SONG_HISTORY_LIMIT = 5
-
-radio_data = {}
-for radio_name in RADIO_STREAMS:
-    radio_data[radio_name] = {
-        "song_history": [],
-        "current_song": {"artist": "", "song": ""},
-        "monitoring_started": False,
-    }
 
 
 # Diccionario para almacenar información sobre estaciones de radio (cargado desde archivos)
@@ -150,13 +137,15 @@ async def get_stream_title(url: str, interval: Optional[int] = 19200):
 
 # Endpoint para obter informações da rádio (simplificado)
 
-@app.get("/radio_info/{radio_name}")
-async def get_radio_info(radio_name: str, background_tasks: BackgroundTasks):
-    if radio_name not in RADIO_STREAMS:
-        return { 
-            "currentSong": "Free API Disabled",
-            "currentArtist": "Contact contato@jailson.es for free use."
-        } 
+@app.get("/radio_info/")
+async def get_radio_info(background_tasks: BackgroundTasks, radio_url: str):
+    async with radio_data_lock:
+        if radio_url not in radio_data:
+            radio_data[radio_url] = {
+                "song_history": [],
+                "current_song": {"artist": "", "song": ""},
+                "monitoring_started": False,
+            }
             
             background_tasks.add_task(monitor_radio, radio_url, background_tasks)
 
