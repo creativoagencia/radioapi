@@ -17,12 +17,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
- DATA_DIR = "radio_data"
+DATA_DIR = "radio_data"
 
 SONG_HISTORY_LIMIT = 10
 
-
-# Diccionario para almacenar información sobre estaciones de radio (cargado desde archivos)
 
 radio_data: Dict[str, Dict] = {}
 radio_data_lock = asyncio.Lock() 
