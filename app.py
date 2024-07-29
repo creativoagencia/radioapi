@@ -17,7 +17,13 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-DATA_DIR = "radio_data"
+# DATA_DIR = "radio_data"
+RADIO_STREAMS = {
+    "jailson": "https://stream.zeno.fm/yn65fsaurfhvv",
+    "inmortales": "https://ldeazevedo.com:8000/inmortales",
+    # Adicione mais rádios aqui, no formato "nome_radio": "url_radio"
+}
+
 SONG_HISTORY_LIMIT = 5
 
 # Dicionário para armazenar informações sobre as rádios (carregadas dos arquivos)
