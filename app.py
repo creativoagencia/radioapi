@@ -18,9 +18,7 @@ app.add_middleware(
 )
 
 DATA_DIR = "radio_data"
-
-SONG_HISTORY_LIMIT = 10
-
+SONG_HISTORY_LIMIT = 5
 
 # Dicionário para armazenar informações sobre as rádios (carregadas dos arquivos)
 radio_data: Dict[str, Dict] = {}
@@ -43,8 +41,7 @@ def get_album_art(artist: str, song: str) -> Optional[str]:
         print(f"Erro ao buscar capa do álbum: {e}")
         return None
 
-Função para obter o título da transmissão de MP3
-
+# Função para obter o título da transmissão de MP3
 def get_mp3_stream_title(streaming_url: str, interval: int) -> Optional[str]:
     needle = b'StreamTitle='
     ua = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.110 Safari/537.36'
@@ -121,7 +118,7 @@ async def root():
         "message": "Bienvenido",
         "now_playing and cover art": "Use /get_stream_title/?url=https://example.com/stream",
         "now_playing and history": "Use /radio_info/?radio_url=https://example.com/stream",
-        "contactame": "+51975959016"       
+        "contact": "+51975959016"       
     }
 
 # Endpoint para obter o título da transmissão e a capa do álbum
@@ -136,7 +133,6 @@ async def get_stream_title(url: str, interval: Optional[int] = 19200):
         return {"error": "Failed to retrieve stream title"}
 
 # Endpoint para obter informações da rádio (simplificado)
-
 @app.get("/radio_info/")
 async def get_radio_info(background_tasks: BackgroundTasks, radio_url: str):
     async with radio_data_lock:
@@ -146,7 +142,7 @@ async def get_radio_info(background_tasks: BackgroundTasks, radio_url: str):
                 "current_song": {"artist": "", "song": ""},
                 "monitoring_started": False,
             }
-          background_tasks.add_task(monitor_radio, radio_url, background_tasks)
+            background_tasks.add_task(monitor_radio, radio_url, background_tasks)
 
         return {
             "currentSong": radio_data[radio_url]["current_song"]["song"],
