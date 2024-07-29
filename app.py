@@ -24,7 +24,16 @@ RADIO_STREAMS = {
     # Adicione mais rádios aqui, no formato "nome_radio": "url_radio"
 }
 
-SONG_HISTORY_LIMIT = 5
+SONG_HISTORY_LIMIT = 10
+
+radio_data = {}
+for radio_name in RADIO_STREAMS:
+    radio_data[radio_name] = {
+        "song_history": [],
+        "current_song": {"artist": "", "song": ""},
+        "monitoring_started": False,
+    }
+
 
 # Dicionário para armazenar informações sobre as rádios (carregadas dos arquivos)
 radio_data: Dict[str, Dict] = {}
