@@ -22,11 +22,12 @@ DATA_DIR = "radio_data"
 SONG_HISTORY_LIMIT = 10
 
 
+# Dicionário para armazenar informações sobre as rádios (carregadas dos arquivos)
 radio_data: Dict[str, Dict] = {}
 radio_data_lock = asyncio.Lock() 
 
 
-# Funcion para obtener el album
+# Função para obter a capa do álbum
 def get_album_art(artist: str, song: str) -> Optional[str]:
     try:
         response = requests.get(
@@ -42,7 +43,8 @@ def get_album_art(artist: str, song: str) -> Optional[str]:
         print(f"Erro ao buscar capa do álbum: {e}")
         return None
 
-# Funcion para obtener el titulo de la transmision de MP3
+Função para obter o título da transmissão de MP3
+
 def get_mp3_stream_title(streaming_url: str, interval: int) -> Optional[str]:
     needle = b'StreamTitle='
     ua = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.110 Safari/537.36'
