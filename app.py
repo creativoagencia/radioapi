@@ -19,7 +19,7 @@ app.add_middleware(
 
  DATA_DIR = "radio_data"
 
-SONG_HISTORY_LIMIT = 5
+SONG_HISTORY_LIMIT = 10
 
 
 # Diccionario para almacenar información sobre estaciones de radio (cargado desde archivos)
@@ -146,8 +146,7 @@ async def get_radio_info(background_tasks: BackgroundTasks, radio_url: str):
                 "current_song": {"artist": "", "song": ""},
                 "monitoring_started": False,
             }
-            
-            background_tasks.add_task(monitor_radio, radio_url, background_tasks)
+          background_tasks.add_task(monitor_radio, radio_url, background_tasks)
 
         return {
             "currentSong": radio_data[radio_url]["current_song"]["song"],
