@@ -118,7 +118,7 @@ async def root():
         "message": "Bienvenido",
         "now_playing and cover art": "Use /get_stream_title/?url=https://example.com/stream",
         "now_playing and history": "Use /radio_info/?radio_url=https://example.com/stream",
-        "contact": "+51975959016"       
+        "contactos": "+51975959016"       
     }
 
 # Endpoint para obter o título da transmissão e a capa do álbum
