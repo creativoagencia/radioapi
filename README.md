@@ -38,12 +38,13 @@ Antes de ejecutar la aplicación, asegúrese de tener instalado lo siguiente:
 Para recuperar el título de la transmisión y la imagen de portada, simplemente reemplace el parámetro URL en el enlace API que se proporciona a continuación:
 
 *API Endpoint:* 
-⁠ https://twj.es/get_stream_title/?url= ⁠
+⁠ https://free.radioapi.lat/get_stream_title/?url= ⁠
 
 *Ejemplo de Uso:*
-Replace ⁠ https://stream.zeno.fm/yn65fsaurfhvv ⁠ with your desired stream URL:
+Remplace ⁠ https://stream.zeno.fm/yn65fsaurfhvv ⁠ with your desired stream URL:
 
-https://twj.es/get_stream_title/?url=https://stream.zeno.fm/yn65fsaurfhvv
+https://free.radioapi.lat/get_stream_title/?url=https://stream.zeno.fm/yn65fsaurfhvv
+https://free.radioapi.lat/radio_info/?radio_url=https://stream.zeno.fm/yn65fsaurfhvv
 
 
 Esto devolverá un enlace a la imagen de portada de la transmisión junto con el título.
